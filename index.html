@@ -6,6 +6,8 @@
     <title>Document</title>
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!-- header -->
@@ -21,31 +23,36 @@
           placeholder="What do you need to do?"
           id="to-do_input"
         />
-        <input type="date" id="to-do_date_input" />
+        <input type="date" id="to-do_date_input" min="" value="" />
         <button type="button">Add</button>
       </div>
       <div class="to-do_controls">
         <div class="filter">
           <i data-feather="filter"></i>
-          <button type="button">Filter</button>
+          <select name="filter" id="filter">
+            <option value="all">All Tasks</option>
+            <option value="completed">Completed</option>
+            <option value="pending">Pending</option>
+            <option value="late">Late</option>
+          </select>
         </div>
-        <button type="button">Delete All</button>
+        <button type="button"><i data-feather="trash-2"></i>Delete All</button>
       </div>
       <div class="to-do_list">
         <table>
-            <thead>
-                <tr>
-                <th>Task</th>
-                <th>Due Date</th>
-                <th>Status</th>
-                <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>No tasks found. Time to add some!</td>
-                </tr>
-            </tbody>
+          <thead>
+            <tr>
+              <th class="task">Task</th>
+              <th>Due Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="no-tasks">
+              <td colspan="4">No tasks found. Time to add some!</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </main>
@@ -60,4 +67,6 @@
       feather.replace();
     </script>
   </body>
+  <!-- Js -->
+  <script src="js/script.js"></script>
 </html>
