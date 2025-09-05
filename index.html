@@ -9,13 +9,51 @@
   </head>
   <body>
     <!-- header -->
-    <header></header>
+    <header>
+      <h1>To-do App</h1>
+    </header>
 
     <!-- Main -->
-    <main></main>
+    <main>
+      <div class="inputs">
+        <input
+          type="text"
+          placeholder="What do you need to do?"
+          id="to-do_input"
+        />
+        <input type="date" id="to-do_date_input" />
+        <button type="button">Add</button>
+      </div>
+      <div class="to-do_controls">
+        <div class="filter">
+          <i data-feather="filter"></i>
+          <button type="button">Filter</button>
+        </div>
+        <button type="button">Delete All</button>
+      </div>
+      <div class="to-do_list">
+        <table>
+            <thead>
+                <tr>
+                <th>Task</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>No tasks found. Time to add some!</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </main>
 
     <!-- footer -->
-    <footer></footer>
+    <footer>
+      <p>asawwscf</p>
+    </footer>
 
     <!-- Icons -->
     <script>
