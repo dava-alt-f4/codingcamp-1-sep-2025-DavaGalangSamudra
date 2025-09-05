@@ -27,10 +27,10 @@ main {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+/* Form styles */
 .inputs {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
 }
 .inputs input {
     padding: 10px;
@@ -62,10 +62,17 @@ main {
 .inputs button:hover {
     filter: brightness(1.2);
 }
+.error {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+/* To-do controls */
 .to-do_controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 .to-do_controls select {
@@ -95,6 +102,7 @@ main {
 .to-do_controls button:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+/* To-do list table */
 .to-do_list {
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -106,6 +114,8 @@ main {
 }
 .to-do_list .task {
     width: 500px;
+    word-break: break-word;
+    white-space: normal;
 }
 .to-do_list tr:hover {
     background-color: #f9f9f9;
@@ -122,4 +132,134 @@ main {
     text-align: center;
     color: #888;
     font-style: italic;
+}
+/* To-do list style */
+.to-do_list .status span {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+.to-do_list .status.completed span {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+.to-do_list .status.late span {
+    background-color: red;
+    color: #fff;
+}
+.to-do_list .actions, .to-do_list .new-actions {
+    min-width: 120px;
+    
+}
+.to-do_list .actions button, .to-do_list .new-actions button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--accent-color);
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+.to-do_list .actions .delete-btn {
+    color: red;
+    margin-left: 5px;
+}
+.to-do_list .actions .complete-btn {
+    color: green;
+    margin-left: 5px;
+}
+/* New actions */
+.to-do_list .new-actions .save-btn {
+    color: green;
+    margin-left: 5px;
+}
+.to-do_list .new-actions .cancel-btn {
+    color: red;
+    margin-left: 5px;
+}
+/* Edit inputs */
+.to-do_list .edit-input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: var(--background-color);
+}
+.to-do_list .edit-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Alert styles*/
+.alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+.delete-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    display: none;
+    width: 500px;
+    text-align: center;;
+}
+.delete-alert h2 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+.delete-alert p {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: small;
+    color: var(--primary-color);
+}
+.delete-alert .alert-actions {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 10px;                 
+    margin-top: 20px;
+}
+.delete-alert .cancel-btn, .delete-alert .continue-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.delete-alert .cancel-btn {
+    background: none;
+    border: 1px solid var(--primary-color);
+    transition: all 0.4s ease;
+}
+.delete-alert .cancel-btn:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+.delete-alert .continue-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    transition: box-shadow 0.3s ease;
+}
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    color: var(--primary-color);
 }

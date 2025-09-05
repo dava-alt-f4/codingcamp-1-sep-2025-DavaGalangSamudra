@@ -23,9 +23,10 @@
           placeholder="What do you need to do?"
           id="to-do_input"
         />
-        <input type="date" id="to-do_date_input" min="" value="" />
-        <button type="button" id="btn">Add</button>
+        <input type="date" id="to-do_date_input"/>
+        <button type="button" id="btn" onclick="addTask()">Add</button>
       </div>
+      <p class="error" id="error-message"></p>
       <div class="to-do_controls">
         <div class="filter">
           <i data-feather="filter"></i>
@@ -36,7 +37,7 @@
             <option value="late">Late</option>
           </select>
         </div>
-        <button type="button" id="delete-all-btn"><i data-feather="trash-2"></i>Delete All</button>
+        <button type="button" id="delete-all-btn" onclick="deleteAllTasks()"><i data-feather="trash-2"></i>Delete All</button>
       </div>
       <div class="to-do_list">
         <table>
@@ -59,8 +60,19 @@
 
     <!-- footer -->
     <footer>
-      <p>asawwscf</p>
+      <p class="creator">Created by dava-alt-f4 | &copy; 2025 </p>
     </footer>
+
+    <!-- Delete All Alert -->
+    <div class="alert-overlay" id="alert-overlay">
+    <div class="delete-alert" id="delete-alert">
+        <h2 class="delete-question" id="delete-question">Are you absolutely sure?</h2>
+        <p class="delete-message" id="delete-message">This action cannot be undone. This will permanently delete all your tasks.</p>
+        <div class="alert-actions">
+            <button class="cancel-btn" id="cancel-btn" onclick="cancelDelete()">Cancel</button>
+            <button class="continue-btn" id="continue-btn" onclick="continueDelete()">Continue</button>
+        </div>
+    </div>
 
     <!-- Icons -->
     <script>
